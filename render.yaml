@@ -12,3 +12,19 @@ services:
         generateValue: true
       - key: MONGO_URI
         sync: false
+
+
+services:
+  - type: web
+    name: h9-invest-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGO_URI
+        sync: false
